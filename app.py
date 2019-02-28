@@ -25,11 +25,9 @@ api.add_resource(Store, '/store/<string:name>')
 api.add_resource(Storelist, '/stores')
 
 
-@app.before_first_request
-def create_db():
-    DB.create_all()
 
 if __name__ == '__main__':
     from db import DB
     DB.init_app(app)
     app.run(port = 7000, debug=True)
+   
